@@ -7,16 +7,19 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="w-full bg-slate-200">
+    <header className="w-full">
       <nav className="w-full max-w-7xl m-auto flex items-center justify-between p-4">
         <Link to={"/"}>
-          <h1>
-            Pet <span>Dev</span>
+          <h1 className="md:text-3xl text-xl font-display text-slate-600">
+            Pet{" "}
+            <span className="bg-linear-120 from-slate-600 to-blue-500 bg-clip-text text-transparent">
+              Dev
+            </span>
           </h1>
         </Link>
 
         <button className="cursor-pointer" onClick={() => setIsOpen(true)}>
-          <MdOutlineShoppingBag size={20} color="#000" />
+          <MdOutlineShoppingBag size={24} color="#000" />
         </button>
       </nav>
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} />
