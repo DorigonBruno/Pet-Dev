@@ -18,8 +18,14 @@ const Header = () => {
           </h1>
         </Link>
 
-        <button className="cursor-pointer" onClick={() => setIsOpen(true)}>
+        <button
+          className="cursor-pointer relative"
+          onClick={() => setIsOpen(true)}
+        >
           <MdOutlineShoppingBag size={24} color="#000" />
+          <span className="bg-blue-700 text-white px-1 rounded-full text-xs absolute -right-0 -top-1">
+            4
+          </span>
         </button>
       </nav>
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} />

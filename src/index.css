@@ -2,4 +2,6 @@
 
 @theme {
   --font-display: "Ultra", serif;
+  --font-usually: "Inter", sans-serif;
+  --font-title: "Poppins", sans-serif;
 }
