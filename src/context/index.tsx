@@ -6,6 +6,8 @@ type CartContextData = {
   cartAmount: number;
   addItemCart: (item: ApiProps) => void;
   total: string;
+  removeItemsCart: (item: CartRequisitionProps) => void;
+  removeSomeItems: (item: CartRequisitionProps) => void;
 };
 
 type CartRequisitionProps = {
@@ -66,9 +68,39 @@ const CartContextProvider = ({ children }: CartProviderProps) => {
     setTotal(totalCartFormated);
   }
 
+  function removeSomeItems(product: CartRequisitionProps) {
+    const findItem = cart.findIndex((item) => item.id === product.id);
+
+    if (cart[findItem].amount > 1) {
+      const myCart = cart;
+
+      myCart[findItem].amount = myCart[findItem].amount - 1;
+      myCart[findItem].total = myCart[findItem].total - myCart[findItem].price;
+
+      setCart(myCart);
+      totalItemsCart(myCart);
+
+      return;
+    }
+  }
+
+  function removeItemsCart(product: CartRequisitionProps) {
+    const removeItem = cart.filter((item) => item.id !== product.id);
+
+    setCart(removeItem);
+    totalItemsCart(removeItem);
+  }
+
   return (
     <CartContext.Provider
-      value={{ cart, cartAmount: cart.length, addItemCart, total }}
+      value={{
+        cart,
+        cartAmount: cart.length,
+        addItemCart,
+        total,
+        removeItemsCart,
+        removeSomeItems,
+      }}
     >
       {children}
     </CartContext.Provider>
