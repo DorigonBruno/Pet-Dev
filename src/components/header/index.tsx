@@ -1,10 +1,13 @@
 import { MdOutlineShoppingBag } from "react-icons/md";
 import Modal from "../modal";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router";
+import { CartContext } from "../../context";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const { cartAmount } = useContext(CartContext);
 
   return (
     <header className="w-full">
@@ -19,13 +22,16 @@ const Header = () => {
         </Link>
 
         <button
-          className="cursor-pointer relative"
+          className="cursor-pointer relative hover:bg-gray-300 rounded-full p-1 transition duration-200 ease-in-out"
           onClick={() => setIsOpen(true)}
         >
           <MdOutlineShoppingBag size={24} color="#000" />
-          <span className="bg-blue-700 text-white px-1 rounded-full text-xs absolute -right-0 -top-1">
-            4
-          </span>
+
+          {cartAmount >= 1 && (
+            <span className="bg-blue-700 text-white px-1 rounded-full text-xs absolute -right-0 -top-1">
+              {cartAmount}
+            </span>
+          )}
         </button>
       </nav>
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} />

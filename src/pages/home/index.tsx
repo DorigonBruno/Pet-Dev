@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import api from "../../services/api";
+import { useContext } from "react";
+import { CartContext } from "../../context";
 
-type ApiProps = {
+export type ApiProps = {
   id: string;
   cover: string;
   description: string;
@@ -12,6 +14,8 @@ type ApiProps = {
 
 const Home = () => {
   const [products, setProducts] = useState<ApiProps[]>([]);
+
+  const { addItemCart } = useContext(CartContext);
 
   useEffect(() => {
     async function getData() {
@@ -54,7 +58,10 @@ const Home = () => {
                     currency: "BRL",
                   })}
                 </span>
-                <button className="cursor-pointer">
+                <button
+                  className="cursor-pointer"
+                  onClick={() => addItemCart(product)}
+                >
                   <MdOutlineAddShoppingCart size={20} color="#000" />
                 </button>
               </div>
