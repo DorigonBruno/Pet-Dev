@@ -41,17 +41,9 @@ const Cart = () => {
 
               <p className="w-40 font-light text-sm">{item.title}</p>
 
-              <p className="font-medium text-md">
-                Preço{" "}
-                {item.price.toLocaleString("pt-BR", {
-                  style: "currency",
-                  currency: "BRL",
-                })}
-              </p>
-
               <div className="flex items-center gap-4">
                 <button
-                  className={`font-bold ${
+                  className={`font-bold text-md border-2 rounded-xl px-1 ${
                     item.amount > 1
                       ? "cursor-pointer"
                       : "cursor-not-allowed opacity-50"
@@ -62,7 +54,7 @@ const Cart = () => {
                 </button>
                 <span>{item.amount}</span>
                 <button
-                  className="cursor-pointer text-lg font-bold"
+                  className="cursor-pointer text-md font-bold border-2 rounded-xl px-1"
                   onClick={() => addItemCart(item)}
                 >
                   +
