@@ -53,9 +53,12 @@ const Payments = () => {
           <span className="font-bold text-xl text-slate-700">{total}</span>
         </div>
 
-        <button className="bg-blue-800 hover:bg-blue-600 transition duration-200 ease-in-out text-white p-2 rounded-md cursor-pointer font-medium">
+        <Link
+          to={"/payment"}
+          className="bg-blue-800 hover:bg-blue-600 transition duration-200 ease-in-out text-white p-2 rounded-md cursor-pointer font-medium text-center"
+        >
           Pagar
-        </button>
+        </Link>
         <Link
           to="/"
           className="text-center border-2 border-slate-800 p-2 rounded-md hover:text-indigo-900 hover:border-indigo-900 transition duration-200 ease-in-out font-medium"

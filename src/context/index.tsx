@@ -8,6 +8,7 @@ type CartContextData = {
   total: string;
   removeItemsCart: (item: CartRequisitionProps) => void;
   removeSomeItems: (item: CartRequisitionProps) => void;
+  clearCart: () => void;
 };
 
 type CartRequisitionProps = {
@@ -29,6 +30,21 @@ export const CartContext = createContext({} as CartContextData);
 const CartContextProvider = ({ children }: CartProviderProps) => {
   const [cart, setCart] = useState<CartRequisitionProps[]>([]);
   const [total, setTotal] = useState("");
+
+  useEffect(() => {
+    const localItem = localStorage.getItem("petItems");
+
+    if (localItem) {
+      const parseItem = JSON.parse(localItem);
+
+      setCart(parseItem);
+      totalItemsCart(parseItem);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("petItems", JSON.stringify(cart));
+  }, [cart]);
 
   function addItemCart(product: ApiProps) {
     const findItem = cart.findIndex((item) => item.id === product.id);
@@ -91,6 +107,10 @@ const CartContextProvider = ({ children }: CartProviderProps) => {
     totalItemsCart(removeItem);
   }
 
+  function clearCart() {
+    setCart([]);
+  }
+
   return (
     <CartContext.Provider
       value={{
@@ -100,6 +120,7 @@ const CartContextProvider = ({ children }: CartProviderProps) => {
         total,
         removeItemsCart,
         removeSomeItems,
+        clearCart,
       }}
     >
       {children}
