@@ -33,7 +33,7 @@ const Home = () => {
       <h1 className="text-center my-6 font-medium font-title md:text-4xl text-2xl">
         Produtos em Alta
       </h1>
-      <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 justify-items-center place-items-center mt-5 gap-6">
+      <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 justify-items-center place-items-center mt-5 gap-3 ">
         {products.map((product) => (
           <article
             className="flex flex-col items-center gap-2 border-1 border-slate-100 p-2 rounded-md font-usually"
