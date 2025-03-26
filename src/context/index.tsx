@@ -1,5 +1,6 @@
 import { createContext, ReactNode, useState, useEffect } from "react";
 import { ApiProps } from "../pages/home";
+import toast from "react-hot-toast";
 
 type CartContextData = {
   cart: CartRequisitionProps[];
@@ -58,6 +59,14 @@ const CartContextProvider = ({ children }: CartProviderProps) => {
 
       setCart(cartList);
       totalItemsCart(cartList);
+
+      toast.success("Item Adicionado", {
+        style: {
+          background: "#282832",
+          color: "#c6d6d6",
+        },
+      });
+
       return;
     }
 
@@ -69,6 +78,12 @@ const CartContextProvider = ({ children }: CartProviderProps) => {
 
     setCart((value) => [...value, data]);
     totalItemsCart([...cart, data]);
+    toast.success("Item Adicionado", {
+      style: {
+        background: "#282832",
+        color: "#c6d6d6",
+      },
+    });
   }
 
   function totalItemsCart(items: CartRequisitionProps[]) {
@@ -105,6 +120,12 @@ const CartContextProvider = ({ children }: CartProviderProps) => {
 
     setCart(removeItem);
     totalItemsCart(removeItem);
+    toast.error("Item Removido", {
+      style: {
+        background: "#282832",
+        color: "#c6d6d6",
+      },
+    });
   }
 
   function clearCart() {
