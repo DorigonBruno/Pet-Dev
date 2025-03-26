@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
-import api from "../../services/api";
-import { useContext } from "react";
+import { Link } from "react-router";
 import { CartContext } from "../../context";
+import api from "../../services/api";
 
 export type ApiProps = {
   id: string;
@@ -36,16 +36,21 @@ const Home = () => {
       <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 justify-items-center place-items-center mt-5 gap-3 ">
         {products.map((product) => (
           <article
-            className="flex flex-col items-center gap-2 border-1 border-slate-100 p-2 rounded-md font-usually"
+            className="flex flex-col items-center justify-center gap-2 border-2 border-slate-100 hover:border-2 hover:border-slate-500 p-2 rounded-md font-usually"
             key={product.id}
           >
-            <img
-              src={product.cover}
-              alt={product.description}
-              className="lg:w-34 md:w-44 w-54 block object-cover"
-            />
+            <Link
+              to={`/products/${product.id}`}
+              className="flex flex-col items-center"
+            >
+              <img
+                src={product.cover}
+                alt={product.description}
+                className="lg:w-34 md:w-44 w-54 block object-cover self-center"
+              />
 
-            <p className="w-54 text-center text-sm">{product.title}</p>
+              <p className="w-54 text-center text-sm">{product.title}</p>
+            </Link>
 
             <div className="flex flex-col">
               <span className="text-xs md:text-sm text-slate-500">
