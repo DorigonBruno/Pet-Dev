@@ -64,9 +64,13 @@ const Modal = ({ isOpen, onClose }: ModalProps) => {
 
               <TbShoppingBagX size={40} className="self-center" color="#000" />
 
-              <span onClick={onClose} className="cursor-pointer underline">
+              <Link
+                to={"/"}
+                onClick={onClose}
+                className="cursor-pointer underline"
+              >
                 Acessar Produtos
-              </span>
+              </Link>
             </div>
           )}
         </div>
