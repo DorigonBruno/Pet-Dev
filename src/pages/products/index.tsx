@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import { useContext } from "react";
 import { CartContext } from "../../context";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
+import { motion } from "framer-motion";
 
 import api from "../../services/api";
 import NotFound from "../notFound";
@@ -43,7 +44,12 @@ const Products = () => {
 
   return (
     <main className="w-full h-screen max-w-7xl m-auto px-4">
-      <section className="flex flex-col md:flex-row items-center gap-8 md:gap-1 md:mt-20 mt-10">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="flex flex-col md:flex-row items-center gap-8 md:gap-1 md:mt-20 mt-10"
+      >
         <img
           src={product.cover}
           alt={product.description}
@@ -71,7 +77,7 @@ const Products = () => {
             </button>
           </div>
         </article>
-      </section>
+      </motion.div>
     </main>
   );
 };

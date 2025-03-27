@@ -4,6 +4,7 @@ import { FaRegTrashAlt } from "react-icons/fa";
 
 import { Link } from "react-router";
 import Payments from "../../components/payment";
+import { motion } from "framer-motion";
 
 const Cart = () => {
   const { cart, addItemCart, removeSomeItems, removeItemsCart } =
@@ -26,7 +27,12 @@ const Cart = () => {
         </div>
       )}
 
-      <section className="grid md:grid-cols-4 lg:grid-cols-6 grid-cols-1 w-full h-screen gap-5">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="grid md:grid-cols-4 lg:grid-cols-6 grid-cols-1 w-full h-screen gap-5"
+      >
         <div className="col-span-4 flex flex-col justify-center md:justify-start">
           {cart.map((item) => (
             <article
@@ -79,7 +85,7 @@ const Cart = () => {
           ))}
         </div>
         {cart.length > 0 && <Payments />}
-      </section>
+      </motion.div>
     </main>
   );
 };

@@ -1,8 +1,14 @@
 import { MdCheckCircle } from "react-icons/md";
+import { motion } from "framer-motion";
 
 const Success = () => {
   return (
-    <main className="w-full h-screen max-w-7-xl m-auto">
+    <motion.div
+      initial={{ y: -200, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="w-full h-screen max-w-7-xl m-auto"
+    >
       <h2 className="text-xl font-bold font-title mt-4 text-center">
         Pedido Confirmado
       </h2>
@@ -19,7 +25,7 @@ const Success = () => {
           Pagamento aprovado
         </span>
       </section>
-    </main>
+    </motion.div>
   );
 };
 

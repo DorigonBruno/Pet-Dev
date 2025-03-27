@@ -4,6 +4,8 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { TbShoppingBagX } from "react-icons/tb";
 import { Link, useLocation } from "react-router";
 
+import { easeIn, motion } from "framer-motion";
+
 type ModalProps = {
   isOpen: boolean;
   onClose: () => void;
@@ -34,7 +36,15 @@ const Modal = ({ isOpen, onClose }: ModalProps) => {
       className="fixed inset-0 bg-black/50 flex justify-center md:justify-end"
       onClick={handleOverlayClick}
     >
-      <div className="md:h-screen md:w-md w-full h-[90%] max-h-[540px] md:max-h-none bottom-0 bg-white p-4 rounded-md overflow-y-scroll fixed">
+      <motion.div
+        initial={{ x: 200 }}
+        animate={{ x: 0 }}
+        transition={{
+          duration: ".500",
+          ease: easeIn,
+        }}
+        className="md:h-screen md:w-md w-full h-[90%] max-h-[540px] md:max-h-none bottom-0 bg-white p-4 rounded-md overflow-y-scroll fixed"
+      >
         <div className="flex flex-col justify-between items-center relative">
           <div className="w-full flex items-center justify-between px-2 border-b-2 border-slate-200 pb-3">
             <h3 className="text-xl font-usually font-medium">Sacola</h3>
@@ -129,7 +139,7 @@ const Modal = ({ isOpen, onClose }: ModalProps) => {
             </div>
           </>
         )}
-      </div>
+      </motion.div>
     </div>
   );
 };

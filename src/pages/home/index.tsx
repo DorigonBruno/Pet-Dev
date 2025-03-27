@@ -3,6 +3,7 @@ import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { Link } from "react-router";
 import { CartContext } from "../../context";
 import api from "../../services/api";
+import { motion } from "framer-motion";
 
 export type ApiProps = {
   id: string;
@@ -29,7 +30,12 @@ const Home = () => {
   }, []);
 
   return (
-    <main className="w-full h-screen max-w-7xl m-auto px-4">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5 }}
+      className="w-full h-screen max-w-7xl m-auto px-4"
+    >
       <h1 className="text-center my-6 font-medium font-title md:text-4xl text-2xl">
         Produtos em Alta
       </h1>
@@ -74,7 +80,7 @@ const Home = () => {
           </article>
         ))}
       </section>
-    </main>
+    </motion.div>
   );
 };
 
