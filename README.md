@@ -75,4 +75,4 @@ Irá aparecer esta tela! È só clicar no link que o Vite nos apresentou e Rodar
 - React Icons
 - Json Server
 - Framer Motion (Animações)
-- React Hot Toas (Notificações)
+- React Hot Toast (Notificações)
