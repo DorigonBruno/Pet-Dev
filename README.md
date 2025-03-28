@@ -1,54 +1,66 @@
-# React + TypeScript + Vite
+<p>
+<img src='./github/gifgithub-ezgif.com-video-to-gif-converter.gif'/>
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Projeto PetShop 🦴
 
-Currently, two official plugins are available:
+O projeto Pet Dev é para fixar e treinar contéudos de Context API.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Foi um desafio do curso FullStack pro, onde não tem correção, apenas fazemos o desafio e cumprimos os requisitos passados como:
 
-## Expanding the ESLint configuration
+- Consumir a Fake API
+- Utilizar Context API
+- Ter uma tela para cada produto com React Router
+- O carrinho ser dinâmico para cada item adicionado ou removido
+- Ter uma página de sucesso de pagamento
+- Ter página de erros, como página não encontrada ou produto não encontrado
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# Como usar 📂
+Primeiramente abrimos o terminal do vs code com <strong>CRTL "</strong>
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+![alt text](image.png)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Então selecionamos para abrir dois terminais no canto superior direito
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+<p>
+  <img src='./github/terminalduplicado.png'/>
+</p>
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+No primeiro Terminal rodamos o comando 
+````js
+  npx json-server db.json
+````
+
+![alt text](image-1.png)
+
+Aqui iremos rodar a biblioteca JSON Server para fazer que com nossa API FAKE rode como uma API real
+
+![alt text](image-2.png)
+
+rodamos o comando no terminal, se deu tudo certo irá aparecer esta janela.
+
+Agora no segundo terminal irá rodar o comando 
+
+````js
+  npm run dev
+````
+
+![alt text](image-3.png)
+
+![alt text](image-4.png)
+
+Irá aparecer esta tela! È só clicar no link que o Vite nos apresentou e Rodar o projeto
+
+
+# Tecnologias 🚀
+- React
+- TypeScript
+- TailwindCSS
+- Axios
+- Context API
+- Vite
+- React Router
+- React Icons
+- Json Server
+- Framer Motion (Animações)
+- React Hot Toas (Notificações)
