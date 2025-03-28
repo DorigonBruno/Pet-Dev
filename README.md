@@ -2,7 +2,7 @@
 <img src='./github/gifgithub-ezgif.com-video-to-gif-converter.gif'/>
 </p>
 
-# Projeto PetShop 🦴
+# Projeto Pet Dev 🦴
 
 O projeto Pet Dev é para fixar e treinar contéudos de Context API.
 
