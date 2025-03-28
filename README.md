@@ -27,15 +27,20 @@ Então selecionamos para abrir dois terminais no canto superior direito
 </p>
 
 No primeiro Terminal rodamos o comando 
-````
+````js
   npx json-server db.json
 ````
 
-![alt text](image-1.png)
+<p>
+  <img src="./github/image-1.png" />
+</p>
 
 Aqui iremos rodar a biblioteca JSON Server para fazer que com nossa API FAKE rode como uma API real
 
-![alt text](image-2.png)
+<p>
+  <img src="./github/image-2.png" />
+</p>
+
 
 rodamos o comando no terminal, se deu tudo certo irá aparecer esta janela.
 
@@ -45,9 +50,15 @@ Agora no segundo terminal irá rodar o comando
   npm run dev
 ````
 
-![alt text](image-3.png)
+<p>
+  <img src="./github/image-3.png" />
+</p>
 
-![alt text](image-4.png)
+
+<p>
+  <img src="./github/image-4.png" />
+</p>
+
 
 Irá aparecer esta tela! È só clicar no link que o Vite nos apresentou e Rodar o projeto
 
