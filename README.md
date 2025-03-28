@@ -16,9 +16,12 @@ Foi um desafio do curso FullStack pro, onde não tem correção, apenas fazemos 
 - Ter página de erros, como página não encontrada ou produto não encontrado
 
 # Como usar 📂
+
 Primeiramente abrimos o terminal do vs code com <strong>CRTL "</strong>
 
-![alt text](image.png)
+<p>
+  <img src="./github/image.png" />
+</p>
 
 Então selecionamos para abrir dois terminais no canto superior direito
 
@@ -26,10 +29,11 @@ Então selecionamos para abrir dois terminais no canto superior direito
   <img src='./github/terminalduplicado.png'/>
 </p>
 
-No primeiro Terminal rodamos o comando 
-````js
+No primeiro Terminal rodamos o comando
+
+```js
   npx json-server db.json
-````
+```
 
 <p>
   <img src="./github/image-1.png" />
@@ -41,29 +45,26 @@ Aqui iremos rodar a biblioteca JSON Server para fazer que com nossa API FAKE rod
   <img src="./github/image-2.png" />
 </p>
 
-
 rodamos o comando no terminal, se deu tudo certo irá aparecer esta janela.
 
-Agora no segundo terminal irá rodar o comando 
+Agora no segundo terminal irá rodar o comando
 
-````js
+```js
   npm run dev
-````
+```
 
 <p>
   <img src="./github/image-3.png" />
 </p>
 
-
 <p>
   <img src="./github/image-4.png" />
 </p>
 
-
 Irá aparecer esta tela! È só clicar no link que o Vite nos apresentou e Rodar o projeto
 
-
 # Tecnologias 🚀
+
 - React
 - TypeScript
 - TailwindCSS
