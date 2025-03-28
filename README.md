@@ -27,7 +27,7 @@ Então selecionamos para abrir dois terminais no canto superior direito
 </p>
 
 No primeiro Terminal rodamos o comando 
-````js
+````
   npx json-server db.json
 ````
 
